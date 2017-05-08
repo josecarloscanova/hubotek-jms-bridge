@@ -1,7 +1,6 @@
 package org.hubotek.jms;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -33,10 +32,9 @@ public class BaseHeaderTransformer<T> implements Function<Message,Map<JmsHeaderE
 				headers.put(JmsHeaderEnum.JMSType, message.getJMSType());
 		}catch(JMSException jmsEx)
 		{ 
-			throw new HubotekException(jmsEx);
+			throw new HubotekJmsException(jmsEx);
 		}
 		return headers;
-		
 	}
 
 }

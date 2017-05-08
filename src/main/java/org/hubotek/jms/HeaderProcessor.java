@@ -9,7 +9,7 @@ import javax.inject.Named;
 import javax.jms.Message;
 
 /**
- * Using a setter injection to permits overriding in the transfomer function.
+ * Using a setter injection to permits overriding in the <i>{@link}Processor</i> {@link}Function.
  * 
  * @author JoseCanova
  *
