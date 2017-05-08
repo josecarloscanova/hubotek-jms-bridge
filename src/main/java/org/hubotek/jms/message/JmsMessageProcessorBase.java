@@ -1,6 +1,7 @@
 package org.hubotek.jms.message;
 
 import javax.decorator.Decorator;
+import javax.decorator.Delegate;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jms.Message;
@@ -10,7 +11,7 @@ import org.hubotek.Processor;
 import org.hubotek.jms.JmsMessageProcessor;
 
 /**
- * TODO: Finish base class implementation.
+ * TODO: Code and test the implementation on container.
  * 
  * @author JoseCanova
  *
@@ -18,10 +19,10 @@ import org.hubotek.jms.JmsMessageProcessor;
 @Decorator
 public class JmsMessageProcessorBase<T,V> implements JmsMessageProcessor<MessageBase<T,V>> {
 
-	@Inject @Named(value="changeMyValue")
+	@Inject @Delegate @Named(value="headerProcessor")
 	Processor <Message,?> headerProcessor;
 	
-	@Inject @Named(value="changeMyValue")
+	@Inject @Delegate @Named(value="changeMyValue")
 	Processor <Message,?> bodyMessageProcessor;
 	
 	public JmsMessageProcessorBase() {
