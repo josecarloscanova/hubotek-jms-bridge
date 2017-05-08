@@ -8,7 +8,6 @@ import javax.inject.Named;
 import javax.jms.JMSException;
 import javax.jms.Message;
 
-import org.hubotek.HubotekException;
 import org.hubotek.JmsHeaderEnum;
 
 @Named(value="baseHeaderTransformer")
